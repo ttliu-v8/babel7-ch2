@@ -1,4 +1,3 @@
-import '@babel/polyfill'
 
 let a = [10, 11, 12]
 
