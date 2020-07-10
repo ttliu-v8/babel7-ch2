@@ -1,16 +1,22 @@
-import _regeneratorRuntime from "@babel/runtime-corejs3/regenerator";
-import _asyncToGenerator from "@babel/runtime-corejs3/helpers/asyncToGenerator";
-import _Promise from "@babel/runtime-corejs3/core-js-stable/promise";
-import _includesInstanceProperty from "@babel/runtime-corejs3/core-js-stable/instance/includes";
-import _mapInstanceProperty from "@babel/runtime-corejs3/core-js-stable/instance/map";
-var a = [10, 11, 12];
+import "core-js/modules/es.array.includes";
+import "core-js/modules/es.array.map";
+import "core-js/modules/es.object.to-string";
+import "core-js/modules/es.promise";
+import "core-js/modules/web.timers";
+import "regenerator-runtime/runtime";
 
-var arr = _mapInstanceProperty(a).call(a, function (n) {
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+import biz1 from './biz1';
+var a = [10, 11, 12];
+var arr = a.map(function (n) {
   return n + 1;
 });
-
 console.log('ARR=' + arr);
-console.log('includes=' + _includesInstanceProperty(a).call(a, 10));
+console.log('includes=' + a.includes(10));
+console.log('sum-foreach=' + biz1.clac());
 
 function f() {
   for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -23,7 +29,7 @@ function f() {
 function f1() {
   var ms1 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1000;
   var ms2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2000;
-  return new _Promise(function (resolve, reject) {
+  return new Promise(function (resolve, reject) {
     window.setTimeout(function () {
       resolve('down');
     }, ms1);
@@ -38,9 +44,9 @@ function f2() {
 }
 
 function _f() {
-  _f = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee() {
+  _f = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     var resource;
-    return _regeneratorRuntime.wrap(function _callee$(_context) {
+    return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
