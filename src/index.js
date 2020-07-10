@@ -1,4 +1,5 @@
-
+import biz from "./biz";
+biz.print()
 let a = [10, 11, 12]
 
 let arr = a.map(n => n + 1)
