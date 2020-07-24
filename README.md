@@ -21,13 +21,14 @@ cnpm i @babel/runtime @babel/runtime-corejs2 -S<br>
 
 
 升级@babel/runtime-corejs3<br>
-方法二升级方式：@babel/polyfill 不必再安装<br> 
+方法一升级方式：@babel/polyfill 不必再安装;而是安装core-js regenerator-runtime<br> 
 cnpm i core-js regenerator-runtime -S <br>
-import "core-js/stable"
-import "regenerator-runtime/runtime"
-"useBuiltIns": "entry|usage",
+"useBuiltIns": "entry",
 "corejs": {
   "version": 3, // 使用core-js@3
   "proposals": true,
 }
-方法二升级方式：cnpm i @babel/runtime @babel/runtime-corejs3 -S，修改插件参数corejs：3  修复新API实例方法（比如includes等）检查不到的问题
+方法二升级方式：cnpm i @babel/runtime @babel/runtime-corejs3 -S <br>
+修改插件参数corejs：3 <br>
+修复新API实例方法（比如includes等）检查不到的问题
+
